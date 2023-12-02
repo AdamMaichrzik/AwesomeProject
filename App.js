@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: 'white',
+    backgroundColor: 'blue',
   },
   scoreBoardView: {
     flex: 1,
