@@ -3,6 +3,10 @@ import { Button, StyleSheet, Text, View, Alert } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
+  function sucessWith50PercentChance() {}
+
+  function mainFunctionForTheGame() {}
+
   return (
     <>
       <View style={styles.container}>
@@ -10,7 +14,7 @@ export default function App() {
           <Text>Your score: </Text>
         </View>
         <View style={styles.doubleItView}>
-          <Button title="double it!"></Button>
+          <Button title="double it!" onPress={mainFunctionForTheGame}></Button>
         </View>
       </View>
     </>
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   scoreBoardView: {
     flex: 1,
