@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { Button, StyleSheet, Text, View, Alert } from "react-native";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: 'yellow',
   },
   scoreBoardView: {
     flex: 1,
