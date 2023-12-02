@@ -10,7 +10,7 @@ export default function App() {
           <Text>Your score: </Text>
         </View>
         <View style={styles.doubleItView}>
-          <Text>Double it or lose it?</Text>
+          <Button title="double it!"></Button>
         </View>
       </View>
     </>
