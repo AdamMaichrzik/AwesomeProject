@@ -1,21 +1,23 @@
 import { StatusBar } from "expo-status-bar";
-import useState from 'react';
+import {useState} from "react";
 import { Button, StyleSheet, Text, View, Alert } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
-  function sucessWith50PercentChance() {}
 
-  function mainFunctionForTheGame() {}
+  const [score, setScore] = useState(0);
+
+  const succesWith50PercentChance = () =>
+    Math.random() < 0.5 && setScore(p => p + 1);
 
   return (
     <>
       <View style={styles.container}>
         <View style={styles.scoreBoardView}>
-          <Text>Your score: </Text>
+          <Text>Your score: {score}</Text>
         </View>
         <View style={styles.doubleItView}>
-          <Button title="double it!" onPress={mainFunctionForTheGame}></Button>
+          <Button title="double it!" onPress={succesWith50PercentChance}></Button>
         </View>
       </View>
     </>
