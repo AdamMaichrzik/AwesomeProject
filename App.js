@@ -19,7 +19,7 @@ export default function App() {
     <>
       <View style={styles.container}>
         <View style={styles.scoreBoardView}>
-          <Text style={styles.text}>Your score: {value}</Text>
+          <Text style={styles.scoreText}>Your score: {value}</Text>
         </View>
         <View style={styles.doubleItView}>
           <Pressable style={styles.button} onPress={get50percentChanceToSucess}>
@@ -40,6 +40,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "white",
   },
+  scoreText: {
+    fontSize: 34,
+  },
   scoreBoardView: {
     flex: 1,
   },
@@ -47,15 +50,15 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   button: {
-    height: 150,
-    width: 150,
-    borderRadius: 150,
+    height: 233,
+    width: 233,
+    borderRadius: 233,
     backgroundColor: "#4e02e4",
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
-  buttonText:{
+  buttonText: {
     color: "white",
     fontWeight: 800,
-  }
+  },
 });
