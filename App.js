@@ -7,6 +7,7 @@ import * as Haptics from 'expo-haptics';
 export default function App() {
   const [score, setScore] = useState(1);
   const [highScore, setHighScore] = useState(1);
+  const [numberOfClicks, setNumberOfClicks] = useState(0);
 
   const mainGameFunction = () => {
     if (Math.random() < 0.5) {
@@ -19,6 +20,7 @@ export default function App() {
     } else {
       setHighScore(highScore); 
     }
+    setNumberOfClicks(numberOfClicks+1);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
     console.log(score);
   };
@@ -29,6 +31,7 @@ export default function App() {
         <View style={styles.scoreBoardView}>
           <Text style={styles.scoreText}>Your score: {score}</Text>
           <Text style={styles.highScoreText}>High score: {highScore}</Text>
+          <Text>Number of tries: {numberOfClicks}</Text>
         </View>
         <View style={styles.doubleItView}>
           <Pressable style={styles.button} onPress={mainGameFunction}>
