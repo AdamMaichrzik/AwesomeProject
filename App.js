@@ -22,6 +22,7 @@ export default function App() {
       <View style={styles.container}>
         <View style={styles.scoreBoardView}>
           <Text style={styles.scoreText}>Your score: {value}</Text>
+          <Text style={styles.highScoreText}>High score: </Text>
         </View>
         <View style={styles.doubleItView}>
           <Pressable style={styles.button} onPress={get50percentChanceToSucess}>
