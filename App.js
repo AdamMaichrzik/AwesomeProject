@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, View, Alert, Pressable } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import * as Haptics from 'expo-haptics';
 
 export default function App() {
   const [value, setValue] = useState(1);
