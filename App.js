@@ -13,6 +13,7 @@ export default function App() {
     } else {
       setValue(1);
     }
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
     console.log(value);
   };
 
