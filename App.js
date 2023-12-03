@@ -5,27 +5,33 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 import * as Haptics from 'expo-haptics';
 
 export default function App() {
-  const [value, setValue] = useState(1);
+  const [score, setScore] = useState(1);
+  const [highScore, setHighScore] = useState(1);
 
-  const get50percentChanceToSucess = () => {
+  const mainGameFunction = () => {
     if (Math.random() < 0.5) {
-      setValue(value * 2);
+      setScore(score * 2);
     } else {
-      setValue(1);
+      setScore(1);
+    } 
+    if(score > highScore){
+      setHighScore(score);
+    } else {
+      setHighScore(highScore); 
     }
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    console.log(value);
+    console.log(score);
   };
 
   return (
     <>
       <View style={styles.container}>
         <View style={styles.scoreBoardView}>
-          <Text style={styles.scoreText}>Your score: {value}</Text>
-          <Text style={styles.highScoreText}>High score: </Text>
+          <Text style={styles.scoreText}>Your score: {score}</Text>
+          <Text style={styles.highScoreText}>High score: {highScore}</Text>
         </View>
         <View style={styles.doubleItView}>
-          <Pressable style={styles.button} onPress={get50percentChanceToSucess}>
+          <Pressable style={styles.button} onPress={mainGameFunction}>
             <Text style={styles.buttonText}>Double it!</Text>
           </Pressable>
         </View>
