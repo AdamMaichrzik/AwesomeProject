@@ -8,12 +8,15 @@ export default function App() {
   const [score, setScore] = useState(1);
   const [highScore, setHighScore] = useState(1);
   const [numberOfClicks, setNumberOfClicks] = useState(0);
+  const [buttonBgColor, setButtonBgColor] = useState("#4e02e4");
 
   const mainGameFunction = () => {
     if (Math.random() < 0.5) {
       setScore(score * 2);
+      setButtonBgColor("green");
     } else {
       setScore(1);
+      setButtonBgColor("red");
     } 
     if(score > highScore){
       setHighScore(score);
@@ -34,7 +37,7 @@ export default function App() {
           <Text>Number of tries: {numberOfClicks}</Text>
         </View>
         <View style={styles.doubleItView}>
-          <Pressable style={styles.button} onPress={mainGameFunction}>
+          <Pressable style={[styles.button,  { backgroundColor: buttonBgColor }]} onPress={mainGameFunction}>
             <Text style={styles.buttonText}>Double it!</Text>
           </Pressable>
         </View>
