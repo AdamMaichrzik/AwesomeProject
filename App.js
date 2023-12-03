@@ -1,28 +1,30 @@
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { Button, StyleSheet, Text, View, Alert } from "react-native";
+import React, { useState } from "react";
+import { Button, StyleSheet, Text, View, Alert, Pressable } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
-  let score = 1;
+  const [value, setValue] = useState(1);
 
-  function get50percentChanceToSucess() {
+  const get50percentChanceToSucess = () => {
     if (Math.random() < 0.5) {
-      score = score * 2;
+      setValue(value * 2);
     } else {
-      score = 1;
+      setValue(1);
     }
-    console.log(score);
-  }
+    console.log(value);
+  };
 
   return (
     <>
       <View style={styles.container}>
         <View style={styles.scoreBoardView}>
-          <Text>Your score: {score}</Text>
+          <Text style={styles.text}>Your score: {value}</Text>
         </View>
         <View style={styles.doubleItView}>
-          <Button title="double it!" onPress={get50percentChanceToSucess}></Button>
+          <Pressable style={styles.button} onPress={get50percentChanceToSucess}>
+            <Text style={styles.buttonText}>Double it!</Text>
+          </Pressable>
         </View>
       </View>
     </>
@@ -44,4 +46,16 @@ const styles = StyleSheet.create({
   doubleItView: {
     flex: 3,
   },
+  button: {
+    height: 150,
+    width: 150,
+    borderRadius: 150,
+    backgroundColor: "#4e02e4",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText:{
+    color: "white",
+    fontWeight: 800,
+  }
 });
